@@ -1,0 +1,52 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  background-color: white;
+  width: 80%;
+  border-radius: 30px;
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+}
+
+.login-left {
+}
+
+.login-right {
+}
+
+.logo {
+}
+
+.form {
+}
+
+.form-group {
+}
+
+.btn-login {
+}
+
+.divide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    display: block;
+    &:first-child,
+    &:nth-child(3) {
+      height: 1px solid #bfbfbf;
+      width: 35%;
+    }
+
+    &:nth-child(2) {
+      color: red;
+    }
+  }
+}
