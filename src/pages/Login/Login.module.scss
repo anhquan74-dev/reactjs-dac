@@ -9,13 +9,12 @@
 
 .content {
   background-color: white;
-  width: 80%;
+  width: 70%;
   border-radius: 20px;
   display: grid;
-  grid-template-columns: 6fr 4fr;
+  grid-template-columns: 60fr 40fr;
   gap: 2rem;
-  padding: 3rem;
-  // margin: 2rem 0;
+  padding: 5rem;
 }
 
 .login-left {
@@ -119,9 +118,6 @@
       width: 40%;
       background-color: #bfbfbf;
     }
-
-    &:nth-child(2) {
-    }
   }
 }
 
@@ -158,22 +154,32 @@
   }
 }
 
-@media only screen and (max-width: 876px) {
+@media only screen and (max-width: 1336px) {
   .content {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .content {
+    width: 60%;
     grid-template-columns: 1fr;
+    padding: 3rem;
   }
 
   .login-left {
     display: none;
   }
-
-  // .login-right {
-  //   padding: 0 40px;
-  // }
 }
 
-@media only screen and (max-width: 410px) {
-  // .login-right {
-  //   padding: 0;
-  // }
+@media only screen and (max-width: 600px) {
+  .content {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .content {
+    width: 80%;
+  }
 }
