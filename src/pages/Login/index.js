@@ -60,7 +60,9 @@ function Login() {
           </div>
           <h3>Login to your Account</h3>
 
-          {status && status === 401 && <Alert variant="warning">The Email or Password is incorrect!</Alert>}
+          {status &&
+            status === 401 &&
+            <Alert variant="warning">The Email or Password is incorrect!</Alert>}
           <form action="" className={cx('form')} onSubmit={handleSubmit}>
             <div className={cx('form-group')}>
               <label htmlFor="email">Email</label>
