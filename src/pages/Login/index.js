@@ -3,10 +3,18 @@ import * as Yup from 'yup';
 import classNames from 'classnames/bind';
 import styles from './Login.module.scss';
 import loginBg from '../../assets/svg/stacked-waves-haikei.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginAccount } from '../../redux/actions/authAction';
+import Alert from 'react-bootstrap/Alert';
 
 const cx = classNames.bind(styles);
 
 function Login() {
+  const dispatch = useDispatch();
+  const status = useSelector((state) => state.auth.login.status);
+
+  console.log(status);
+
   const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
     initialValues: {
       email: '',
@@ -23,6 +31,7 @@ function Login() {
     }),
     onSubmit: (values) => {
       console.log(values);
+      dispatch(loginAccount(values));
     },
   });
 
@@ -50,6 +59,8 @@ function Login() {
             <p>DAC Internship</p>
           </div>
           <h3>Login to your Account</h3>
+
+          {status && status === 401 && <Alert variant="warning">The Email or Password is incorrect!</Alert>}
           <form action="" className={cx('form')} onSubmit={handleSubmit}>
             <div className={cx('form-group')}>
               <label htmlFor="email">Email</label>
