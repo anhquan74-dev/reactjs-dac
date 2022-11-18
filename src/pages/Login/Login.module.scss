@@ -9,12 +9,10 @@
 
 .content {
   background-color: white;
-  // width: 70%;
   max-width: 1000px;
   border-radius: 16px;
   display: grid;
   grid-template-columns: 60fr 40fr;
-  // gap: 2rem;
   padding: 5rem;
 }
 
@@ -155,16 +153,15 @@
   }
 }
 
-@media only screen and (max-width: 1336px) {
-  // .content {
-  //   width: 80%;
-  // }
-}
+// @media only screen and (max-width: 1336px) {
+//   // .content {
+//   //   width: 80%;
+//   // }
+// }
 
 @media only screen and (max-width: 1024px) {
   .content {
     width: 568px;
-    // width: 60%;
     grid-template-columns: 1fr;
     padding: 3rem;
   }

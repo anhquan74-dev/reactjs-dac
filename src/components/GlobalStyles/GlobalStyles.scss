@@ -46,6 +46,9 @@
   --pd-rs-left: 28px;
   --primary-bg: white;
   --white-bg: white;
+  --header-height: 56px;
+  --sidebar-width-large: 256px;
+  --sidebar-width-small: 72px;
 }
 
 ::selection {
@@ -54,8 +57,8 @@
 }
 
 html {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  // -ms-overflow-style: none;
+  // scrollbar-width: none;
   font-size: 62.5%;
 }
 
@@ -70,15 +73,15 @@ html::-webkit-scrollbar-thumb {
   border-radius: 4px;
 }
 
-html ::-webkit-scrollbar-track {
-  background-color: transparent;
-  border-radius: 0;
-}
+// html ::-webkit-scrollbar-track {
+//   background-color: transparent;
+//   border-radius: 0;
+// }
 
 body {
   overflow: unset;
-  font-size: 1.6rem;
-  line-height: 1.5;
+  font-size: 1.6rem !important;
+  line-height: 1.5 !important;
   text-rendering: optimizeSpeed;
-  // height: 2000px;
+  height: 2000px;
 }

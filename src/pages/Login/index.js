@@ -6,12 +6,22 @@ import loginBg from '../../assets/svg/stacked-waves-haikei.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginAccount } from '../../redux/actions/authAction';
 import Alert from 'react-bootstrap/Alert';
+import { useNavigate } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 function Login() {
   const dispatch = useDispatch();
   const status = useSelector((state) => state.auth.login.status);
+  const user = useSelector((state) => state.auth.login.user);
+  const navigate = useNavigate();
+
+  // const isLogged
+  if (user && user.roles[0].authority === 'ADMIN') {
+    navigate('/admin');
+  } else {
+    navigate('/user');
+  }
 
   console.log(status);
 
@@ -60,9 +70,7 @@ function Login() {
           </div>
           <h3>Login to your Account</h3>
 
-          {status &&
-            status === 401 &&
-            <Alert variant="warning">The Email or Password is incorrect!</Alert>}
+          {status && status === 401 && <Alert variant="warning">The Email or Password is incorrect!</Alert>}
           <form action="" className={cx('form')} onSubmit={handleSubmit}>
             <div className={cx('form-group')}>
               <label htmlFor="email">Email</label>
