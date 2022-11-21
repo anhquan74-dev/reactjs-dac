@@ -24,33 +24,36 @@ function Sidebar({ isToggleSidebar }) {
         className={cx('menu-item', {
           'menu-toggle': isToggleSidebar,
         })}
+        title="Dashboard"
       >
         <div>
           <FontAwesomeIcon icon={faChartSimple} />
         </div>
-        <div>Dashboard</div>
+        {!isToggleSidebar && <div>Dashboard</div>}
       </NavLink>
       <NavLink
         to="/admin/campaign"
         className={cx('menu-item', {
           'menu-toggle': isToggleSidebar,
         })}
+        title="Campaign"
       >
         <div>
           <FontAwesomeIcon icon={faClipboardCheck} />
         </div>
-        <div>Campaign</div>
+        {!isToggleSidebar && <div>Campaign</div>}
       </NavLink>
       <NavLink
         to="/admin/account"
         className={cx('menu-item', {
           'menu-toggle': isToggleSidebar,
         })}
+        title="Account"
       >
         <div>
           <FontAwesomeIcon icon={faUsers} />
         </div>
-        <div>Account</div>
+        {!isToggleSidebar && <div>Account</div>}
       </NavLink>
     </div>
   );

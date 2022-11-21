@@ -32,6 +32,7 @@ function AdminLayout() {
             'content-toggle': isToggleSidebar,
           })}
         >
+          <div className={cx('wrapper')}></div>;
           <Outlet />
         </div>
       </div>

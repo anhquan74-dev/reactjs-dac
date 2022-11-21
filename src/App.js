@@ -13,7 +13,9 @@ function App() {
           <Route path="/" exact element={<Login />}></Route>
           <Route path="/login" element={<Login />}></Route>
           {/* <Route path="/register" element={<Register />}></Route> */}
+
           <Route path="/user" element={<UserLayout />}></Route>
+
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="dashboard" element={<Dashboard />} />

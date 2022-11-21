@@ -9,6 +9,11 @@
 .container {
   margin-top: var(--header-height);
   display: flex;
+  div {
+    &:first-child {
+      transition: width 0.2s ease-in-out;
+    }
+  }
 }
 .sidebar {
   position: fixed;
