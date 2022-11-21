@@ -6,7 +6,8 @@ import loginBg from '../../assets/svg/stacked-waves-haikei.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginAccount } from '../../redux/actions/authAction';
 import Alert from 'react-bootstrap/Alert';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { MainLayout } from '../../components/Layouts';
 
 const cx = classNames.bind(styles);
 
@@ -16,12 +17,7 @@ function Login() {
   const user = useSelector((state) => state.auth.login.user);
   const navigate = useNavigate();
 
-  // const isLogged
-  if (user && user.roles[0].authority === 'ADMIN') {
-    navigate('/admin');
-  } else {
-    navigate('/user');
-  }
+
 
   console.log(status);
 
@@ -44,6 +40,11 @@ function Login() {
       dispatch(loginAccount(values));
     },
   });
+
+    // const isLogged
+    if (user) {
+      return <Navigate to={'/'}/>
+    }
 
   return (
     <div

@@ -14,7 +14,7 @@ function Header({ handelToggleSidebar }) {
       </div>
       <div className={cx('logo')}>Logo</div>
       <div className={cx('avatar')}>
-        <img src={require('../../../../assets/images/default_avatar.png').default} alt="avatar" />
+        <img src={require('../../../assets/images/default_avatar.png').default} alt="avatar" />
       </div>
     </header>
   );

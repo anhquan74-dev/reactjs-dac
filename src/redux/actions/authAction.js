@@ -1,27 +1,21 @@
 import { login } from '../../services/authService';
-import { LOGIN_ERROR, LOGIN_REQUEST, LOGIN_SUCCESS } from './types';
+import { LOGIN_ERROR, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT_SUCCESS } from './types';
 
 export const loginAccount = (user) => {
-  return async (dispatch, getState) => {
+  return (dispatch, getState) => {
     dispatch(loginAccountRequest());
     try {
       login(user)
         .then((res) => {
-          console.log(res);
-          console.log(res.status);
-          const data = res && res?.data ? res.data : [];
           if (res.data.token) {
             localStorage.setItem('user', JSON.stringify(res.data));
           }
           dispatch(loginAccountSuccess(res));
         })
         .catch((e) => {
-          console.log(e.response);
-          // console.log('Loi: ' + e);
           dispatch(loginAccountError(e));
         });
     } catch (e) {
-      console.log('Loi: ' + e);
       dispatch(loginAccountError(e));
     }
   };
@@ -44,5 +38,15 @@ export const loginAccountError = (error) => {
   return {
     type: LOGIN_ERROR,
     payload: error,
+  };
+};
+
+export const logout = () => {
+  localStorage.removeItem('user');
+};
+
+export const logoutSuccess = () => {
+  return {
+    type: LOGOUT_SUCCESS,
   };
 };

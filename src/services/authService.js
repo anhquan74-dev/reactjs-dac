@@ -1,9 +1,7 @@
-import axios from 'axios';
-
-const API_URL = 'http://localhost:8080/api/auth';
+import httpRequest from '../utils/httpRequest';
 
 const login = (user) => {
-  return axios.post(`${API_URL}/login`, user);
+  return httpRequest.post('/auth/login', user);
 };
 
 const logout = () => {

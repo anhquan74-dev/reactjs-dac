@@ -6,15 +6,18 @@
   right: 0;
   left: 0;
 }
+
 .container {
   margin-top: var(--header-height);
   display: flex;
+
   div {
     &:first-child {
-      transition: width 0.2s ease-in-out;
+      transition: width 0.3s ease-in-out;
     }
   }
 }
+
 .sidebar {
   position: fixed;
   top: var(--header-height);
